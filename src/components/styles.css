@@ -1,0 +1,49 @@
+/* src/component../TextRenderer.css */
+.mention {
+  padding: 1px 2px;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.95em;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.highlight-blue {
+  background-color: rgb(20, 170, 245);
+}
+
+.highlight-purple {
+  background-color: rgb(175, 56, 235);
+}
+
+.highlight-green {
+  background-color: rgb(175, 184, 59);
+}
+
+.mention.highlight-light-green {
+  background-color: rgb(126, 204, 73);
+}
+
+.highlight-yellow {
+  background-color: rgb(250, 208, 0);
+}
+
+.section-number {
+  font-weight: normal;
+  margin-right: 0.5rem;
+  color: #333; /* or any color you prefer */
+}
+
+h4 {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 1rem;
+}
+
+.definitions h4,
+.key-details h4,
+.services h4 {
+  font-size: 1.1em;
+  margin-top: 1.5rem;
+}

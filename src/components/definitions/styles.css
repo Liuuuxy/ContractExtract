@@ -1,0 +1,51 @@
+/* styles.css */
+.definitions {
+  margin: 1em 0;
+}
+
+.definitions h4 {
+  margin-bottom: 1em;
+  font-weight: normal;
+}
+
+.section-number {
+  font-weight: normal;
+  margin-right: 4px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.definition-list {
+  list-style: none;
+  counter-reset: definition-counter;
+  margin-left: 20px;
+  padding: 0;
+}
+
+.definition-list li {
+  counter-increment: definition-counter;
+  display: flex;
+  margin-bottom: 0.5em;
+  align-items: flex-start;
+}
+
+.definition-list li::before {
+  content: "(" counter(definition-counter, lower-alpha) ")";
+  margin-right: 8px;
+  min-width: 24px;
+  color: #333;
+}
+
+.definition-content {
+  flex: 1;
+}
+
+.definition-content > div {
+  display: inline;
+}
