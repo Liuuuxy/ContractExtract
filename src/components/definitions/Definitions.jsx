@@ -1,4 +1,3 @@
-// src/components/Definitions.jsx
 import React from "react";
 import TextRenderer from "../TextRenderer";
 import "./styles.css";
@@ -28,7 +27,6 @@ const Definitions = ({ data, sectionNumber }) => {
         </h4>
       )}
 
-      {/* Definition items using ordered list */}
       <ol className="definition-list">
         {data.children.slice(1).map((section, index) => {
           if (section.type === "clause") {

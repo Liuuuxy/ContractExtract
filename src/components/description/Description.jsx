@@ -1,4 +1,3 @@
-// src/components/Description.jsx
 import React from "react";
 import { TextRenderer } from "../TextRenderer";
 

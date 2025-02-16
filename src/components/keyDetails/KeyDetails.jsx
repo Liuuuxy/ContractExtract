@@ -1,4 +1,3 @@
-// src/components/keyDetails/KeyDetails.jsx
 import React from "react";
 import TextRenderer from "../TextRenderer";
 

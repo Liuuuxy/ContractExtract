@@ -1,4 +1,3 @@
-// src/components/TextRenderer.jsx
 import React from "react";
 import "./styles.css";
 

@@ -1,4 +1,3 @@
-// src/components/Title.jsx
 import React from "react";
 
 const Title = ({ data }) => <h1>{data.children[0].text}</h1>;

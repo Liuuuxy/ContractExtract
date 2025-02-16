@@ -1,4 +1,3 @@
-// src/components/agreement/Agreement.jsx
 import React from "react";
 
 const Agreement = ({ data, sectionNumber }) => (

@@ -1,4 +1,3 @@
-// src/components/ServiceAgreement.jsx
 import React from "react";
 import Title from "./title/Title";
 import Description from "./description/Description";
