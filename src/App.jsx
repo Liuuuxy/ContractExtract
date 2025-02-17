@@ -1,23 +1,68 @@
-import React from "react";
-import ServiceAgreement from "./components/ServiceAgreement";
-import jsonData from "./data.json";
-import "./styles.css";
+import React, { useState, useEffect } from 'react';
+import { ContractViewer } from './components/ContractViewer';
 
-const App = () => {
-  const data = jsonData[0];
+function App() {
+  const [contractData, setContractData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!data) {
-    console.error("No data available");
-    return <div>Error: No data available</div>;
+  useEffect(() => {
+    fetch('/input.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to load contract data');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setContractData(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#f5f5f5'
+      }}>
+        Loading contract data...
+      </div>
+    );
   }
 
-  // console.log("Data being passed to ServiceAgreement:", data);
+  if (error) {
+    return (
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#f5f5f5',
+        color: 'red'
+      }}>
+        Error: {error}
+      </div>
+    );
+  }
 
   return (
-    <div className="app">
-      <ServiceAgreement data={data} />
+
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: '#f5f5f5',
+      padding: '32px'
+    }}>
+      <ContractViewer data={contractData} />
     </div>
   );
-};
+}
 
 export default App;
